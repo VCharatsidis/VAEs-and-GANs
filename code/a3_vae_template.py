@@ -7,6 +7,7 @@ from torchvision.utils import make_grid
 import numpy as np
 from datasets.bmnist import bmnist
 import matplotlib
+import math
 from scipy.stats import norm
 
 class Encoder(nn.Module):
@@ -107,20 +108,18 @@ class VAE(nn.Module):
 
         return sampled_ims, im_means
 
-    def sample_manifold(self, frequency=10):
-        n = frequency
-        X = np.linspace(0, 1, n + 2)
-        Y = np.linspace(0, 1, n + 2)
 
-        ppfX = norm.ppf(X[1:-1])
-        ppfY = norm.ppf(Y[1:-1])
+    def manifold_sample(self, n_samples):
+        n = int(math.sqrt(n_samples))
+        xy = torch.zeros(n_samples, 2)
+        xy[:, 0] = torch.arange(0.01, n, 1 / n) % 1
+        xy[:, 1] = (torch.arange(0.01, n_samples, 1) / n).float() / n
+        z = torch.erfinv(2 * xy - 1) * math.sqrt(2)
 
-        zs = [[x, y] for x in ppfX for y in ppfY]
-        zs = torch.tensor(zs)
 
-        out = self.decoder(zs)
-        im_means = out.reshape(n * n, 1, 28, 28)
-        return im_means
+        with torch.no_grad():
+            mean = self.decoder(z)
+        return mean
 
 def epoch_iter(model, data, optimizer):
     """
@@ -133,13 +132,11 @@ def epoch_iter(model, data, optimizer):
     size = len(data)
 
     for sample in data:
-        # get the average elbo of the batch
         input = sample.reshape(sample.shape[0], -1)
 
         elbo = model.forward(input)
         average_epoch_elbo -= elbo
 
-        # train the model
         if model.training:
             model.zero_grad()
             elbo.backward()
@@ -166,7 +163,7 @@ def run_epoch(model, data, optimizer):
 
 
 def save_elbo_plot(train_curve, val_curve, filename):
-    plt.figure(figsize=(12, 6))
+    plt.figure(figsize=(24, 12))
     plt.plot(train_curve, label='train elbo')
     plt.plot(val_curve, label='validation elbo')
     plt.legend()
@@ -176,10 +173,10 @@ def save_elbo_plot(train_curve, val_curve, filename):
     plt.savefig(filename)
 
 
-def save_sample(sample, imw, epoch, nrow=8, slug='sample'):
-    sample = sample.view(-1, 1, imw, imw)
+def save_sample(sample, size, epoch, nrow=8):
+    sample = sample.view(-1, 1, size, size)
     sample = make_grid(sample, nrow=nrow).detach().numpy().astype(np.float).transpose(1, 2, 0)
-    matplotlib.image.imsave(f"images/vae_{slug}_{epoch}.png", sample)
+    matplotlib.image.imsave(f"images/vae_manimani_{epoch}.png", sample)
 
 def main():
     data = bmnist()[:2]  # ignore test split
@@ -204,8 +201,9 @@ def main():
         save_sample(mean_sample, size_width, epoch)
 
     if ARGS.zdim == 2:
-        manifold = model.manifold_sample(100)
-        save_sample(manifold, size_width, epoch, 10, 'manifold')
+        print("manifold")
+        manifold = model.manifold_sample(256)
+        save_sample(manifold, size_width, epoch, 16)
 
     np.save('curves.npy', {'train': train_curve, 'val': val_curve})
     # --------------------------------------------------------------------
@@ -221,7 +219,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--epochs', default=40, type=int,
                         help='max number of epochs')
-    parser.add_argument('--zdim', default=20, type=int,
+    parser.add_argument('--zdim', default=2, type=int,
                         help='dimensionality of latent space')
 
     ARGS = parser.parse_args()

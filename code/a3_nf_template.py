@@ -274,7 +274,7 @@ def main():
         samples = model.sample(16)
         samples = samples.reshape(16, 1, 28, 28)
         save_image(samples,
-                    'images/nflow/{epoch:03d}.png',
+                    'images/nflow/{}.png'.format(epoch),
                     nrow=4, normalize=True)
 
     save_bpd_plot(train_curve, val_curve, 'nfs_bpd.pdf')

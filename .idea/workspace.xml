@@ -4,6 +4,7 @@
     <list default="true" id="05a8284a-e9b1-4f26-a721-62bb2c14a877" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/code/a3_gan_template.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/a3_gan_template.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/a3_nf_template.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/a3_nf_template.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/code/a3_gan_template.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/code/code/a3_vae_template.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/code/a3_vae_template.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/images/vae_manifold_39.png" beforeDir="false" afterPath="$PROJECT_DIR$/code/images/vae/vae_manifold_39.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/images/vae_manimani_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/code/images/vae/vae_manimani_0.png" afterDir="false" />
@@ -25,10 +26,15 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/a3_gan_template.py">
+        <entry file="file://$PROJECT_DIR$/code/images/gan/0.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/a3_nf_template.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="129" column="67" selection-start-line="129" selection-start-column="27" selection-end-line="129" selection-end-column="67" />
+            <state relative-caret-position="3157">
+              <caret line="228" column="17" lean-forward="true" selection-start-line="228" selection-start-column="17" selection-end-line="228" selection-end-column="17" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -37,15 +43,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/images/gan/0.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/a3_nf_template.py">
+        <entry file="file://$PROJECT_DIR$/code/code/a3_vae_template.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="278" lean-forward="true" selection-start-line="278" selection-end-line="278" />
+            <state relative-caret-position="-2397">
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -54,6 +54,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/code/a3_gan_template.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="539">
+              <caret line="183" column="10" lean-forward="true" selection-start-line="183" selection-start-column="10" selection-end-line="183" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/images/nflow/0.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
@@ -92,8 +101,8 @@
         <option value="$PROJECT_DIR$/code/a3_vae_template.py" />
         <option value="$PROJECT_DIR$/code/code/a3_vae_template.py" />
         <option value="$USER_HOME$/Anaconda3/Lib/site-packages/torchvision/utils.py" />
-        <option value="$PROJECT_DIR$/code/a3_gan_template.py" />
         <option value="$PROJECT_DIR$/code/a3_nf_template.py" />
+        <option value="$PROJECT_DIR$/code/a3_gan_template.py" />
       </list>
     </option>
   </component>
@@ -126,7 +135,20 @@
               <item name="assignment_3" type="b2602c69:ProjectViewProjectNode" />
               <item name="assignment_3" type="462c0819:PsiDirectoryNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment_3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment_3" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment_3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignment_3" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="mnist" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="assignment_3" type="b2602c69:ProjectViewProjectNode" />
@@ -279,13 +301,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="541" y="33" width="1483" height="1029" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31949332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.30536914" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30536914" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -302,7 +325,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/code/images/gan/28000.png" />
     <entry file="file://$PROJECT_DIR$/code/images/gan/34000.png" />
     <entry file="file://$PROJECT_DIR$/code/images/gan/36000.png" />
     <entry file="file://$PROJECT_DIR$/code/images/gan/50000.png" />
@@ -368,10 +390,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/a3_gan_template.py">
+    <entry file="file://$PROJECT_DIR$/code/images/nflow/0.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/code/a3_vae_template.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="129" column="67" selection-start-line="129" selection-start-column="27" selection-end-line="129" selection-end-column="67" />
+        <state relative-caret-position="-2397">
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -380,16 +404,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/a3_nf_template.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="278" lean-forward="true" selection-start-line="278" selection-end-line="278" />
+        <state relative-caret-position="3157">
+          <caret line="228" column="17" lean-forward="true" selection-start-line="228" selection-start-column="17" selection-end-line="228" selection-end-column="17" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/images/nflow/0.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/code/a3_gan_template.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="183" column="10" lean-forward="true" selection-start-line="183" selection-start-column="10" selection-end-line="183" selection-end-column="10" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
